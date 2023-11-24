@@ -33,14 +33,40 @@
 						<div class="inner">
 							<h1 class="major">Realized Volatility Prediction and Graph Data Mining</h1>
 							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
-							<iframe src="./images/glasso_graph.html" height = "600" width="900" frameBorder = "0"></iframe>
-							<p> Graph Neural Networks (GNNs) have emerged as a powerful tool, demonstrating promise across various applications, including recommendation
-								systems, fraud detection, and community detection in social networks. However, in certain areas, such as the domain of financial market studies, 
-								though GNNs have attracted substantial attention and research, there is a challenge of insufficient appropriate graphs that presents an obstacle to the effective application of GNNs.</p>
+							<p>Graph Neural Networks (GNNs) have emerged as a powerful tool, demonstrating promise across various applications, including recommendation systems, fraud detection, and community detection in social networks. However, in certain areas, such as the domain of financial market studies, though GNNs have attracted substantial attention and research, there is a challenge of insufficient appropriate graphs that presents an obstacle to the effective application of GNNs.</p>
 							<p>Graphs, at their core, are comprised of nodes and edges that link these nodes together. Within the financial market context, nodes are often entities such as firms or stocks, and edges represent relationships between these entities. GNNs as a class of deep learning models seek to refine node representations by processing and aggregating information from neighboring nodes within the graph, which allows them to excel in real-world applications where understanding relationships between entities is crucial. </p>
 							<p>We introduce a novel approach that combines graph discovery techniques with GNN models to enhance the identification of interconnections within financial markets. This method aims to address the issue of inadequate suitable graphs by leveraging data to uncover the latent graph, thereby tailoring node embeddings to specific tasks. Furthermore, employing graph discovery models eliminates the requirement for expertise in a field to generate graphs, saving both time and effort that would otherwise be spent on manual graph creation.</p>
-							<p>We experimented with three 
+							<p>We experimented with three graph discovery methods on
+								<a href="https://www.kaggle.com/competitions/optiver-realized-volatility-prediction">Kaggle Optiver Realize Volatility Prediciton</a>
+								dataset.
+							</p>
+							<ul>
+								<li>The first is to threshold the covariance matrix. This is the most intuitive method.</li>
+								<li>The second is to use the widely population algorithm Graph-lasso (Glasso) to estimate the underlying precision matrix of the underlying data distribution. For more detals,
+									see <a href="https://jerryfriedman.su.domains/ftp/glasso-bio.pdf">[here]</a>.
+								</li>
+								<li>The third one is to impose a Laplacian constraint, i.e., assume the precision matrix of the underlying distribution of data is “given” by the Laplacian matrix of a graph. The Laplacian matrix naturally occurs in GNNs model setups and motivations and is of special interest if combining graph discovery with GNNs. For more details,
+									see a href="https://proceedings.neurips.cc/paper/2020/hash/4ef42b32bccc9485b10b8183507e5d82-Abstract.html">[here]</a>.
+								</li>
+							</ul>
+							  
+							The following shows the graphs discovered by the Laplacian constrainted method, covariance thresholding method, and Glasso method individually.
+							
+							<div class="row">
+								<div class="column">
+									<iframe src="./images/lap_graph.html" frameBorder = "0"></iframe>
+								</div>
+								<div class="column">
+									<iframe src="./images/cov_graph.html" frameBorder = "0"></iframe>
+								<div class="column">
+									<iframe src="./images/glasso_graph.html" frameBorder = "0"></iframe>
+								</div>
+							</div>
 						</div>
+
+						<p>We find that precision-based graph discovery methods significantly enhance GNNs accuracy, at a minimum of 15%, by generating meaningful graphs and node embeddings. In contrast, conventional covariance-based methods lack this effectiveness due to their consideration of indirect influences, leading to suboptimal graph structures. Our analyses from a graph theory perspective demonstrate that the precision-based Glasso graph discovery method produces the most efficient network structure.</p>
+
+						<p>Please contact for a preprint or more details.</p>
 					</section>
 
 			</div>
