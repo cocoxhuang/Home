@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Recommender System for Advertising</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Coco (Xiaoyu) Huang</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Recommender System for Advertising</h1>
+							<span class="image fit"><img src="images/brand_influencer_network.png" alt="" /></span>
+							<p>Suppose a supplment brand A have decided to have brand deals with two fitness influencers, Gabe and Chris, and a fitness wear brand has also 
+								decided to work with Chris. Does brand B have more incentive to sign a deal with Gabe?</p>
+							<p>In fact, it is very common that brands of different categories target the same clients. In the example above, brand A and brand B both target younger male population as their core customers and have strong incentives to sign similar groups of influencers.</p>
+							<p>Based on this logic, We eveloped a Graph Neural Networks (GNNs) based recommender system connecting businesses with social media influencers by learning various aspects of their social media behaviors such as text caption, image, and the social relationship among influencers and brands. Specifically, the model obtained the representations of businesses and social media influencers by Light Graph Convolutional Networks (LightGCNs). We collected a 50GB pool of raw Instagram user profiles and posts over 1427 businesses, 16774 influencers, then extracted features from social media user behaviors by employing pretrained Natural Language Processing (NLP) and computer vision (CV) models. The recall@20 rate of our model is currently around 7%.</p>
+							<p>For an interative graph of a selected network of our dataset, 
+								click <a href="./images/Brand_Influerncer_Network.html">[here]</a>
+							</p>
+						</div>
+
+						
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; All rights reserved.</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
