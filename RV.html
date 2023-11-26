@@ -41,30 +41,31 @@
 							</p>
 							<ul>
 								<li>The first is to threshold the covariance matrix. This is the most intuitive method.</li>
-								<li>The second is to use the widely population algorithm Graph-lasso (Glasso) to estimate the underlying precision matrix of the underlying data distribution. For more detals,
+								<li>The second is to use the widely popular algorithm Graph-lasso (Glasso) to estimate the underlying precision matrix of the underlying data distribution. For more detals,
 									see <a href="https://jerryfriedman.su.domains/ftp/glasso-bio.pdf">[here]</a>.
 								</li>
 								<li>The third one is to impose a Laplacian constraint, i.e., assume the precision matrix of the underlying distribution of data is “given” by the Laplacian matrix of a graph. The Laplacian matrix naturally occurs in GNNs model setups and motivations and is of special interest if combining graph discovery with GNNs. For more details,
 									see <a href="https://proceedings.neurips.cc/paper/2020/hash/4ef42b32bccc9485b10b8183507e5d82-Abstract.html">[here]</a>.
 								</li>
 							</ul>
-							  
-							<p>The following shows the graphs discovered by the Laplacian constrainted method, covariance thresholding method, and Glasso method individually.</p>
+							<p>The following shows the graphs discovered by the Laplacian constrained method, covariance thresholding method, and Glasso method individually.</p>
 							
-							<iframe src="./images/lap_graph.html" width="700" height="600" frameBorder = "0"></iframe>
-
-							<p>Graph discovered by the Laplacian constrainted method. </p>
-
-							<iframe src="./images/cov_graph.html" width="700" height="600"frameBorder = "0"></iframe>
-
+							<div style="text-align: center;">
+							 	<iframe src="./images/lap_graph.html" width="700" height="600" frameBorder = "0"></iframe>
+						        </div>
+							<p>Graph discovered by the Laplacian constrained method. </p>
+							
+							<div style="text-align: center;">
+							 	<iframe src="./images/cov_graph.html" width="700" height="600"frameBorder = "0"></iframe>
+						        </div>
 							<p>Graph discovered by the covariance thresholding method. </p>
-
-							<iframe src="./images/glasso_graph.html" width="700" height="600" frameBorder = "0"></iframe>
-
-							<p>Graph discovered by the Glasso constrainted method. </p>
+							
+							<div style="text-align: center;">
+							 	<iframe src="./images/glasso_graph.html" width="700" height="600" frameBorder = "0"></iframe>
+						        </div>
+							<p>Graph discovered by the Glasso method. </p>
 
 							<p>We find that precision-based graph discovery methods significantly enhance GNNs accuracy, at a minimum of 15% compared to benchmark LightGBM and Neural Net models, by generating meaningful graphs and node embeddings. In contrast, conventional covariance-based methods lack this effectiveness due to their consideration of indirect influences, leading to suboptimal graph structures. Our analyses from a graph theory perspective demonstrate that the precision-based Glasso graph discovery method produces the most efficient network structure.</p>
-
 							<p>Please contact for a preprint or more details.</p>
 						</div>
 
